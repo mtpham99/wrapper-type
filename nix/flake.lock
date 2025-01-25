@@ -1,0 +1,50 @@
+{
+  "nodes": {
+    "cpp23-importstd-shell": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "nix",
+        "lastModified": 1737686825,
+        "narHash": "sha256-ILY8LH+vXyZIkEXn90eG6KndkdFXjKH85eUNUQJjmtk=",
+        "owner": "mtpham99",
+        "repo": "nixshell-cpp23-stdmodule",
+        "rev": "8bbe8d9eebfbf39a8bf296895b94daf2d898a4e4",
+        "type": "github"
+      },
+      "original": {
+        "dir": "nix",
+        "owner": "mtpham99",
+        "repo": "nixshell-cpp23-stdmodule",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1737717945,
+        "narHash": "sha256-ET91TMkab3PmOZnqiJQYOtSGvSTvGeHoegAv4zcTefM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ecd26a469ac56357fd333946a99086e992452b6a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "cpp23-importstd-shell": "cpp23-importstd-shell",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
