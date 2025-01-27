@@ -60,28 +60,10 @@ public:
     requires(std::is_destructible_v<wrapped_type>)
   = default;
 
-  constexpr wrapped_type const&
-  get_underlying() const & noexcept
+  constexpr decltype(auto)
+  get_underlying(this auto&& self) noexcept
   {
-    return _val;
-  }
-
-  constexpr wrapped_type const&&
-  get_underlying() const && noexcept
-  {
-    return std::move(_val);
-  }
-
-  constexpr wrapped_type&
-  get_underlying() & noexcept
-  {
-    return _val;
-  }
-
-  constexpr wrapped_type&&
-  get_underlying() && noexcept
-  {
-    return std::move(_val);
+    return std::forward_like<decltype(self)>(self._val);
   }
 };
 

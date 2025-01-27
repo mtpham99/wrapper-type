@@ -19,6 +19,18 @@ concept can_bit_shift = requires {
   std::declval<T>() >> std::declval<int>();
 };
 
+TEST_CASE("get underlying")
+{
+  using my_wrap = wrapper::wrap<int, struct id>;
+
+  auto x = my_wrap{};
+  auto const cx = x;
+  static_assert(std::same_as<int&, decltype(x.get_underlying())>);
+  static_assert(std::same_as<int const&, decltype(cx.get_underlying())>);
+  static_assert(std::same_as<int&&, decltype(std::move(x).get_underlying())>);
+  static_assert(std::same_as<int const&&, decltype(std::move(cx).get_underlying())>);
+}
+
 TEST_CASE("arithmetic")
 {
   using wrap_int = wrapper::wrap<int, struct id, wrapper::ops::all_arithmetic>;
